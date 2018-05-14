@@ -42,6 +42,7 @@ public class Trabajo {
           
           System.out.println("Introduzca ID supervisor 1");
           this.supervisor1 = sc.nextInt();
+          
           System.out.println("Introduzca ID supervisor 2");
           this.supervisor2 = sc.nextInt();
     }
