@@ -5,10 +5,72 @@
  */
 package platotv;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  *
  * @author Iván
  */
-public class ProdAudio {
+public class ProdAudio extends Produccion {
+
+      /**
+     * Clase hereda de Produccion
+     */
+    public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
+        super(numeroSerie, fechaComienzo, fechaFinalizacion);
+    }
+
+    public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) {
+        super(numeroSerie, fechaComienzo, fechaFinalizacion, idTrabajo, supervisor1, supervisor2, descripcion);
+    }
+
+    public int getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(int numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public int getIdTrabajo() {
+        return idTrabajo;
+    }
+
+    public void setIdTrabajo(int idTrabajo) {
+        this.idTrabajo = idTrabajo;
+    }
+
+    public int getSupervisor1() {
+        return supervisor1;
+    }
+
+    public void setSupervisor1(int supervisor1) {
+        this.supervisor1 = supervisor1;
+    }
+
+    public int getSupervisor2() {
+        return supervisor2;
+    }
+
+    public void setSupervisor2(int supervisor2) {
+        this.supervisor2 = supervisor2;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     
+    /**
+     * Metodo tostring
+     * @return 
+     */
+public String toString() {
+    return super.toString();
+    }
 }

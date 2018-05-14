@@ -5,10 +5,31 @@
  */
 package platotv;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Iván
  */
-public class TrabajadorSonido {
+public class TrabajadorSonido extends Trabajador {
+
+      /**
+     * Clase hereda de Trabajador
+     */
+    public TrabajadorSonido() {
+    }
+
+    public TrabajadorSonido(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) {
+        super(NIF, nombre, apellidos, genero, senior, fechaIngreso);
+    }
+    
+    /**
+     * Metodo tostring
+     * @return 
+     */
+   @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }
