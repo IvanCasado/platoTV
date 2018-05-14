@@ -17,7 +17,7 @@ public class PlatoTv {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println("Manuel");
+        System.out.println("Manuel, ivan, Omar");
     }
     
 }
