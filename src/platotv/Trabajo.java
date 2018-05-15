@@ -61,7 +61,9 @@ public class Trabajo {
         this.descripcion = descripcion;
     }
     
-    
+    /**
+     * 
+     */
     
     /**
      * Metodos getter y setter
@@ -87,7 +89,10 @@ public class Trabajo {
     public int getSupervisor2() {
         return supervisor2;
     }
-
+/**
+ * 
+ * @param supervisor2 
+ */
     public void setSupervisor2(int supervisor2) {
         this.supervisor2 = supervisor2;
     }

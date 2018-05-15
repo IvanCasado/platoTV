@@ -69,7 +69,8 @@ public class ProdVideo extends Produccion{
      * Metodo tostring
      * @return 
      */
-public String toString() {
+    @Override
+    public String toString() {
     return super.toString();
     }
 

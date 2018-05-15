@@ -14,7 +14,7 @@ import java.util.Calendar;
  */
 public class ProdAudio extends Produccion {
 
-      /**
+    /**
      * Clase hereda de Produccion
      */
     public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
@@ -65,12 +65,13 @@ public class ProdAudio extends Produccion {
         this.descripcion = descripcion;
     }
 
-    
     /**
      * Metodo tostring
-     * @return 
+     *
+     * @return
      */
-public String toString() {
-    return super.toString();
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
