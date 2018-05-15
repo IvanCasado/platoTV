@@ -7,14 +7,15 @@ package platotv;
 
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Iván
  */
-public class Produccion extends Trabajo{
+public class Produccion extends Trabajo {
+
     int numeroSerie;
     private Calendar fechaComienzo, fechaFinalizacion;
-    
 
     public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
         this.numeroSerie = numeroSerie;
@@ -53,14 +54,17 @@ public class Produccion extends Trabajo{
         this.fechaFinalizacion = fechaFinalizacion;
     }
 
+    @Override
     public int getIdTrabajo() {
         return idTrabajo;
     }
 
+    @Override
     public void setIdTrabajo(int idTrabajo) {
         this.idTrabajo = idTrabajo;
     }
 
+    @Override
     public int getSupervisor1() {
         return supervisor1;
     }
@@ -69,26 +73,32 @@ public class Produccion extends Trabajo{
         this.supervisor1 = supervisor1;
     }
 
+    @Override
     public int getSupervisor2() {
         return supervisor2;
     }
 
+    @Override
     public void setSupervisor2(int supervisor2) {
         this.supervisor2 = supervisor2;
     }
 
+    @Override
     public String getDescripcion() {
         return descripcion;
     }
 
+    @Override
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
     /**
      * Metodo tostring
-     * @return 
+     *
+     * @return
      */
+    @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         return super.toString() + "\nnumero de serie=" + numeroSerie + "\nFecha comienzo=" + fechaComienzo + "\nfecha finalizacion=" + fechaFinalizacion;
