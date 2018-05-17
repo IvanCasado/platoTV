@@ -15,7 +15,10 @@ import java.util.Calendar;
 public class ProdAudio extends Produccion {
 
     /**
-     * Clase hereda de Produccion
+     * Clase QUE hereda de Produccion
+     * @param numeroSerie
+     * @param fechaComienzo
+     * @param fechaFinalizacion
      */
     public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
@@ -25,42 +28,52 @@ public class ProdAudio extends Produccion {
         super(numeroSerie, fechaComienzo, fechaFinalizacion, idTrabajo, supervisor1, supervisor2, descripcion);
     }
 
+    @Override
     public int getNumeroSerie() {
         return numeroSerie;
     }
 
+    @Override
     public void setNumeroSerie(int numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
 
+    @Override
     public int getIdTrabajo() {
         return idTrabajo;
     }
 
+    @Override
     public void setIdTrabajo(int idTrabajo) {
         this.idTrabajo = idTrabajo;
     }
 
+    @Override
     public int getSupervisor1() {
         return supervisor1;
     }
 
+    @Override
     public void setSupervisor1(int supervisor1) {
         this.supervisor1 = supervisor1;
     }
 
+    @Override
     public int getSupervisor2() {
         return supervisor2;
     }
 
+    @Override
     public void setSupervisor2(int supervisor2) {
         this.supervisor2 = supervisor2;
     }
 
+    @Override
     public String getDescripcion() {
         return descripcion;
     }
 
+    @Override
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }

@@ -17,6 +17,8 @@ public class ProdVideo extends Produccion{
     /**
      * Clase hereda de Produccion
      */
+    
+    //Constructores
     public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
     }
@@ -24,7 +26,10 @@ public class ProdVideo extends Produccion{
     public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) {
         super(numeroSerie, fechaComienzo, fechaFinalizacion, idTrabajo, supervisor1, supervisor2, descripcion);
     }
-
+/**
+ * METODOS GETTER SETTER
+ * @return 
+ */
    public int getNumeroSerie() {
         return numeroSerie;
     }
