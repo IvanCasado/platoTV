@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Modifica {
 
     ArrayList<Produccion> produccionessonido;
-    
+
     /**
      * Constructor sin parametros que inicia el arraylist
      */
@@ -24,10 +24,12 @@ public class Modifica {
         this.produccionessonido = new ArrayList<>();
 
     }
+
     /**
-     * metodo que pide un numero de serie por teclado 
-     * recorre un array list y hace casting de los elementos para que compruebe que es una produccion de audio y evitar que un trabajador
-     * de sonido pueda editar producciones de video
+     * metodo que pide un numero de serie por teclado recorre un array list y
+     * hace casting de los elementos para que compruebe que es una produccion de
+     * audio y evitar que un trabajador de sonido pueda editar producciones de
+     * video
      */
     public void modificarProduccion() {
 
@@ -43,7 +45,7 @@ public class Modifica {
 
         //recorremos el array buscando el ID
         for (Produccion p : produccionessonido) {
-            
+
             //hacemos casting para comprobar que no sea una produccion de video
             if (p instanceof ProdAudio) {
                 ProdAudio producionauxiliar = (ProdAudio) p;
