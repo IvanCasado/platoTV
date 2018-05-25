@@ -7,13 +7,23 @@ package platotv;
 
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author Iván
  */
 public class Produccion extends Trabajo {
-
+    
+    
+    ArrayList<Produccion> producciones ;
+    
+    
+    
+    
+    
+    
     int numeroSerie;
     private Calendar fechaComienzo, fechaFinalizacion;
 
@@ -92,6 +102,46 @@ public class Produccion extends Trabajo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
+    public void trabaja(){
+    
+    }
+    
+    
+    
+    
+      public void modificarProduccion() {
+
+        //variables del metodo
+        int numSerie;
+        boolean encontrado = false;
+
+        //instancia scanner
+        Scanner sc = new Scanner(System.in);
+        //pedimos datos
+        System.out.println("Introduzca ID de la produccion a modificar");
+        numSerie = sc.nextInt();
+
+        //recorremos el array buscando el ID
+        for (Produccion p : producciones) {
+
+            //hacemos casting para comprobar que no sea una produccion de video
+            if (p instanceof ProdAudio) {
+                ProdAudio producionauxiliar = (ProdAudio) p;
+
+                if (producionauxiliar.getNumeroSerie() == numSerie) {
+                    encontrado = true;//ponemos como encontrado
+                    System.out.println("Introduzca nuevos datos");
+                }
+            }
+        }
+        // si no lo encuentra printa mensaje
+        if (encontrado == false) {
+            System.out.println("No existe ese numero de serie");
+        }
+
+    }
+    
 
     /**
      * Metodo tostring
