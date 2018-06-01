@@ -54,12 +54,30 @@ public class Trabajo {
        * @param supervisor2
        * @param descripcion 
        */
-    public Trabajo(int idTrabajo, int supervisor1, int supervisor2, String descripcion) {
+     public Trabajo(int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {
         this.idTrabajo = idTrabajo;
         this.supervisor1 = supervisor1;
         this.supervisor2 = supervisor2;
         this.descripcion = descripcion;
+        
+        if (idTrabajo < 0){
+            throw new Exception("no puede ser menor de 0");
+        }else {System.out.println("id correcto");
+        }
+        if (supervisor1 < 0){
+            throw new Exception("no puede ser menor de 0");
+        }else {System.out.println("supervisor correcto");
+        }
+        if (supervisor2 < 0){
+            throw new Exception("el id no puede ser menos que 0");
+        }else {System.out.println("supervisor correcto");
+        }
+        if (descripcion == null || descripcion == "" ){
+            throw new Exception("no puede ser menor de 0");
+        }else {System.out.println("id correcto");
+        }
     }
+ 
     
     /**
      * 

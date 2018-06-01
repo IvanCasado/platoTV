@@ -36,10 +36,11 @@ public class Produccion extends Trabajo {
         
         if (numeroSerie < 0){
             throw new Exception("no puede ser menor de 0");
-        }else {System.out.println("id correcto");}
+        }else {System.out.println("id correcto");
+        }
     }
 
-    public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) {
+    public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {
         super(idTrabajo, supervisor1, supervisor2, descripcion);
         this.numeroSerie = numeroSerie;
         this.fechaComienzo = fechaComienzo;
