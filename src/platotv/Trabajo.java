@@ -72,7 +72,7 @@ public class Trabajo {
             throw new Exception("el id no puede ser menos que 0");
         }else {System.out.println("supervisor correcto");
         }
-        if (descripcion == null || descripcion == "" ){
+        if ((descripcion == null) || (descripcion == "") ||(descripcion.length()<140 ) ){
             throw new Exception("no puede ser menor de 0");
         }else {System.out.println("id correcto");
         }
