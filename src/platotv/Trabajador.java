@@ -14,36 +14,16 @@ import java.text.SimpleDateFormat;
  * @author Iván
  */
 public class Trabajador {
-    String NIF, nombre,apellidos,paraChar;
+    String NIF, nombre,apellidos;
     char genero;
     boolean senior;
     private Calendar fechaIngreso;
           
     
     public  Trabajador (){
-    Scanner sc = new Scanner(System.in);
-          
-          System.out.println("Introduzca NIF del trabajador");
-          this.NIF = sc.next();
-          
-          System.out.println("Introduzca nombre del trabajador");
-          this.nombre= sc.next();
-          
-          System.out.println("Introduzca apellidos del trabajador");
-          this.apellidos= sc.next();
-          
-          System.out.println("Introduzca su genero");
-          this.paraChar = sc.next();
-          
-         if (paraChar.equalsIgnoreCase("V")) {
-            genero=paraChar.charAt(0);
-        }
-            
-        
-          System.out.println("Introduzca si es senior");
-          this.senior = sc.nextBoolean();
-         
+ 
 }
+    
 
    
     /**
@@ -55,13 +35,30 @@ public class Trabajador {
        * @param senior
        * @param fechaIngreso
        */
-      public Trabajador(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) {
+      public Trabajador(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
         this.NIF = NIF;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.genero = genero;
-        this.senior = senior;
-        this.fechaIngreso = fechaIngreso;
+        
+       
+      
+          if (genero=='V'||genero=='v'||genero=='M'||genero=='m') {
+              this.genero = genero;
+          }else{
+            throw  new Exception("el sexo debe ser v o m");
+          }
+           if (senior==true||senior==false) {
+              this.senior = senior;
+          }else{
+            
+          }
+           SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+          if (sdf.format(fechaIngreso.getTime()).equals(fechaIngreso)) {
+              this.fechaIngreso=fechaIngreso;
+          }else{
+              throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
+          }
+ 
     }
 
     public String getFechaIngreso() {
@@ -95,14 +92,6 @@ public class Trabajador {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-
-    public String getParaChar() {
-        return paraChar;
-    }
-
-    public void setParaChar(String paraChar) {
-        this.paraChar = paraChar;
     }
 
     public char getGenero() {
