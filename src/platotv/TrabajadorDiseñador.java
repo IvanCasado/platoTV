@@ -35,7 +35,7 @@ public class TrabajadorDiseñador extends Trabajador {
         this.softwareExperto = softwareExperto;
     }
 
-    public TrabajadorDiseñador(String Categoria, String softwareExperto, String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) {
+    public TrabajadorDiseñador(String Categoria, String softwareExperto, String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
         super(NIF, nombre, apellidos, genero, senior, fechaIngreso);
         this.Categoria = Categoria;
         this.softwareExperto = softwareExperto;
@@ -81,13 +81,7 @@ public class TrabajadorDiseñador extends Trabajador {
         this.apellidos = apellidos;
     }
 
-    public String getParaChar() {
-        return paraChar;
-    }
-
-    public void setParaChar(String paraChar) {
-        this.paraChar = paraChar;
-    }
+   
 
     public char getGenero() {
         return genero;

@@ -19,7 +19,7 @@ public class TrabajadorVideo extends Trabajador {
     public TrabajadorVideo() {
     }
 
-    public TrabajadorVideo(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) {
+    public TrabajadorVideo(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
         super(NIF, nombre, apellidos, genero, senior, fechaIngreso);
     }
     

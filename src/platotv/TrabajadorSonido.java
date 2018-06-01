@@ -30,7 +30,7 @@ public class TrabajadorSonido extends Trabajador {
     }
 //constructor con parametros
 
-    public TrabajadorSonido(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) {
+    public TrabajadorSonido(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
         super(NIF, nombre, apellidos, genero, senior, fechaIngreso);
     }
 
