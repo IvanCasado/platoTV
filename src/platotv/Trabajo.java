@@ -47,13 +47,18 @@ public class Trabajo {
           this.supervisor2 = sc.nextInt();*/
     }
 
-      /**
-       * Constructor que recibe los parametros
-       * @param idTrabajo
-       * @param supervisor1
-       * @param supervisor2
-       * @param descripcion 
-       */
+    /**
+     * 
+     * @param idTrabajo
+     * No puede ser menor que cero
+     * @param supervisor1
+     * tiene que ser un entero y no puede ser menor que 0 y no puede ser igual que supervisor2
+     * @param supervisor2
+     * tiene que ser un entero y no puede ser menor que 0 y no puede ser igual que supervisor2
+     * @param descripcion
+     * La descripcion no puede sobrepasar los 140
+     * @throws Exception 
+     */
      public Trabajo(int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {
         this.idTrabajo = idTrabajo;
         this.supervisor1 = supervisor1;
@@ -64,12 +69,16 @@ public class Trabajo {
             throw new Exception("no puede ser menor de 0");
         }else {System.out.println("id correcto");
         }
-        if (supervisor1 < 0){
+        if (supervisor1 < 0 ){
             throw new Exception("no puede ser menor de 0");
         }else {System.out.println("supervisor correcto");
         }
         if (supervisor2 < 0){
             throw new Exception("el id no puede ser menos que 0");
+        }else {System.out.println("supervisor correcto");
+        }
+        if (supervisor1 == supervisor2 ){
+            throw new Exception("no pueden ser el mismo supervisor");
         }else {System.out.println("supervisor correcto");
         }
         if ((descripcion == null) || (descripcion == "") ||(descripcion.length()<140 ) ){
