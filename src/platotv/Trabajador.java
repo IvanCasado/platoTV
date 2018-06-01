@@ -26,15 +26,16 @@ public class Trabajador {
     
 
    
-    /**
-       * Constructor que recibe los parametros
-       * @param NIF
-       * @param nombre
-       * @param apellidos
-       * @param genero 
-       * @param senior
-       * @param fechaIngreso
-       */
+  /**
+   * 
+   * @param NIF pide el nif del trabajador se espera un string con formato de nif
+   * @param nombre pide el nombre del trabajador espera un string
+   * @param apellidos pide el apellido del trabajador espera un string
+   * @param genero pregunta el genero del trabajador se espera 'v' o 'm'
+   * @param senior pide comprobar si es senior o no es senior
+   * @param fechaIngreso contiene la fecha de ingerso de un trabajse espera formato dd-MM-yyyy
+   * @throws Exception 
+   */
       public Trabajador(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
         this.NIF = NIF;
         this.nombre = nombre;
@@ -50,7 +51,7 @@ public class Trabajador {
            if (senior==true||senior==false) {
               this.senior = senior;
           }else{
-            
+            throw  new Exception("Senior ha de ser true o false");
           }
            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
           if (sdf.format(fechaIngreso.getTime()).equals(fechaIngreso)) {
