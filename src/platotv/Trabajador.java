@@ -34,7 +34,12 @@ public class Trabajador {
           
           System.out.println("Introduzca su genero");
           this.paraChar = sc.next();
-          genero=paraChar.charAt(0);
+          
+         if (paraChar.equalsIgnoreCase("V")) {
+            genero=paraChar.charAt(0);
+        }
+            
+        
           System.out.println("Introduzca si es senior");
           this.senior = sc.nextBoolean();
          
@@ -59,8 +64,9 @@ public class Trabajador {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Calendar getFechaIngreso() {
-        return fechaIngreso;
+    public String getFechaIngreso() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        return sdf.format(fechaIngreso.getTime());
     }
 
     public void setFechaIngreso(Calendar fechaIngreso) {
