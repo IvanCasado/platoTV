@@ -20,7 +20,7 @@ public class ProdAudio extends Produccion {
      * @param fechaComienzo
      * @param fechaFinalizacion
      */
-    public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
+    public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
     }
 

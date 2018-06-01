@@ -19,7 +19,7 @@ public class ProdVideo extends Produccion{
      */
     
     //Constructores
-    public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
+    public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
     }
 

@@ -31,7 +31,7 @@ public class Trabajo {
      * Costructor por defecto que nois pide los atributos por teclado
      */
       public Trabajo() {
-          
+       /*   
           Scanner sc = new Scanner(System.in);
           
           System.out.println("Introduzca ID del trabajo");
@@ -44,7 +44,7 @@ public class Trabajo {
           this.supervisor1 = sc.nextInt();
           
           System.out.println("Introduzca ID supervisor 2");
-          this.supervisor2 = sc.nextInt();
+          this.supervisor2 = sc.nextInt();*/
     }
 
       /**

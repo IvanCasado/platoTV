@@ -27,10 +27,16 @@ public class Produccion extends Trabajo {
     int numeroSerie;
     private Calendar fechaComienzo, fechaFinalizacion;
 
-    public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) {
+    public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
         this.numeroSerie = numeroSerie;
         this.fechaComienzo = fechaComienzo;
         this.fechaFinalizacion = fechaFinalizacion;
+        
+        
+        
+        if (numeroSerie < 0){
+            throw new Exception("no puede ser menor de 0");
+        }else {System.out.println("id correcto");}
     }
 
     public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) {

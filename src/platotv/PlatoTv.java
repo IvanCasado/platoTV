@@ -16,17 +16,24 @@ public class PlatoTv {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
    
         
         ArrayList<Produccion> producciones ;
         
-         ArrayList<Trabajador> trabajadores;
+        // ArrayList<Trabajador> trabajadores;
          
          
+        try{
+            ProdAudio p1 = new ProdAudio(1, null, null);
+        }
         
+        catch (Exception e){
+            System.out.println(e.toString());
         
+        }
+       // Trabajador t1 = new TrabajadorDiseñador(null, null, null, null, null, 'v', true, null);
         
     }
     
