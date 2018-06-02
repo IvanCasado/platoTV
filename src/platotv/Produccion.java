@@ -36,8 +36,29 @@ public class Produccion extends Trabajo {
         
         if (numeroSerie < 0){
             throw new Exception("no puede ser menor de 0");
-        }else {System.out.println("id correcto");
+        }else {
+            System.out.println("id correcto");
         }
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        if (sdf.format(fechaComienzo.getTime()).equals(fechaComienzo)) {
+            this.fechaComienzo=fechaComienzo;
+        }else{
+            throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
+        }
+        
+        if (sdf.format(fechaFinalizacion.getTime()).equals(fechaFinalizacion)) {
+            this.fechaFinalizacion=fechaFinalizacion;
+        }else{
+            throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
+        }
+        
+        if (fechaComienzo >= fechaFinalizacion){
+            throw new Exception("La fecha de comienzo no puede ser posterior a la de Finalizacion");
+        }else{
+            System.out.println("Fechas correctas");
+        }
+          
     }
 
     public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {

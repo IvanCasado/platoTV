@@ -53,7 +53,7 @@ public class Trabajador {
           }else{
             throw  new Exception("Senior ha de ser true o false");
           }
-           SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+          SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
           if (sdf.format(fechaIngreso.getTime()).equals(fechaIngreso)) {
               this.fechaIngreso=fechaIngreso;
           }else{
