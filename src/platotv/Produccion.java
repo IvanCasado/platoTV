@@ -26,7 +26,16 @@ public class Produccion extends Trabajo {
     
     int numeroSerie;
     private Calendar fechaComienzo, fechaFinalizacion;
-
+    /**
+     * 
+     * @param numeroSerie
+     * no puede ser menor que 0
+     * @param fechaComienzo
+     * El formato fecha a seguir es dd-MM-yyyy y no puede ser posterior a la fecha de finalizacion
+     * @param fechaFinalizacion
+     * El formato fecha a seguir es dd-MM-yyyy y no puede ser anterior a la fecha de finalizacion
+     * @throws Exception 
+     */
     public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
         this.numeroSerie = numeroSerie;
         this.fechaComienzo = fechaComienzo;
@@ -53,11 +62,12 @@ public class Produccion extends Trabajo {
             throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
         }
         
-        if (fechaComienzo >= fechaFinalizacion){
+        if (fechaComienzo > fechaFinalizacion){
             throw new Exception("La fecha de comienzo no puede ser posterior a la de Finalizacion");
         }else{
             System.out.println("Fechas correctas");
         }
+        
           
     }
 
