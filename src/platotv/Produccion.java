@@ -42,10 +42,14 @@ public class Produccion extends Trabajo {
             this.fechaComienzo.setTime(sdf.parse(fechaComienzo));
             this.fechaFinalizacion.setTime(sdf.parse(fechaFinalizacion));
         } catch (Exception e) {
-            System.out.println("el formato de las fechas es dd-MM-yyyy");
+            System.out.println("error:el formato de las fechas es dd-MM-yyyy");
         }
+        
+       
+        
+        
         if (numeroSerie < 0) {
-            throw new Exception("no puede ser menor de 0");
+            throw new Exception("el id no puede ser menor de 0");
         } else {
             System.out.println("id correcto");
         }
