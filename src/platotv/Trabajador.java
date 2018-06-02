@@ -57,8 +57,10 @@ public class Trabajador {
         }
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-        //  llamada a validacion
+        //  llamadas a validacion
         validarDNI(NIF);
+        validarNombre(nombre);
+        validarApellidos(apellidos);
     }
 
     /**
@@ -173,7 +175,7 @@ public class Trabajador {
             throw new Exception("no se admiten numeros");
 
         } else {
-            System.out.println("(Nombre correcto)");
+            System.out.println("Nombre correcto");
         }
 
     }
@@ -197,7 +199,7 @@ public class Trabajador {
 
         if (letras == true) {
 
-            throw new Exception("no se admiten numeros");
+            throw new Exception("no se admiten numeros en el apellido");
 
         } else {
             System.out.println("apellido correcto");

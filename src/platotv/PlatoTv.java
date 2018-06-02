@@ -100,8 +100,46 @@ public class PlatoTv {
         } catch (Exception e) {
             System.out.println(e.toString());
         }
+
+        System.out.println("");
+        System.out.println("PRUEBAS TRABAJO");
+        System.out.println("");
+
+        try {
+            System.out.println("\ntr con todo bien");
+            Trabajo tr = new Trabajo(001, 002, 003, "prueba trabajop");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            System.out.println("\ntr2 con id mal");
+            Trabajo tr2 = new Trabajo(-1, 002, 003, "prueba trabajo2");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        try {
+            System.out.println("\ntr3 con supervisore4s iguales");
+            Trabajo tr3 = new Trabajo(1, 002, 002, "prueba trabajo3");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            System.out.println("\ntr4 con descripcion vacio");
+            Trabajo tr4 = new Trabajo(1, 002, 003, "");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
         
-        
+         try {
+            System.out.println("\ntr4 con descripcion null");
+            Trabajo tr5 = new Trabajo(1, 002, 003, null);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+         
+         
 
         // Trabajador t1 = new TrabajadorDiseñador(null, null, null, null, null, 'v', true, null);
     }
