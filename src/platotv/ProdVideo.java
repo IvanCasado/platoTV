@@ -23,7 +23,7 @@ public class ProdVideo extends Produccion{
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
     }
 
-    public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) {
+    public ProdVideo(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {
         super(numeroSerie, fechaComienzo, fechaFinalizacion, idTrabajo, supervisor1, supervisor2, descripcion);
     }
 /**
