@@ -28,9 +28,15 @@ public class TrabajadorDiseñador extends Trabajador {
      * @param softwareExperto es el software en el que es experto se espera un
      * String
      */
-    public TrabajadorDiseñador(String Categoria, String softwareExperto) {
+    public TrabajadorDiseñador(String Categoria, String softwareExperto) throws Exception {
         this.Categoria = Categoria;
         this.softwareExperto = softwareExperto;
+        
+          if ((Categoria == null) || (Categoria == "") || (softwareExperto == null) || (softwareExperto == "")) {
+            throw new Exception("categoria/software no valido");
+        } else {
+            System.out.println("categoria/software valida");
+        }
 
     }
 

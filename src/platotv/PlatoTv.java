@@ -21,12 +21,15 @@ public class PlatoTv {
 
         ArrayList<Produccion> producciones;
 
-        // ArrayList<Trabajador> trabajadores;
+       /*
+        *Nos saltamos las pruebas de Tsonido y TVideo porque son iguales que la superclase trabajador 
+        */
+        
         //pruebas Produccion VIDEO
         try {
             System.out.println("");
             System.out.println("PRUEBAS DE PRODUCCIONES DE VIDEO");
-            System.out.println("");
+            
             //prod VIDEO con todo ok
             System.out.println("\npv1 se introducen todos los datos correctos");
             ProdVideo pV1 = new ProdVideo(1, "2018-03-12", "2018-04-12");
@@ -47,7 +50,7 @@ public class PlatoTv {
         try {
             System.out.println("");
             System.out.println("PRUEBAS DE PRODUCCIONES DE AUDIO");
-            System.out.println("");
+          
             //prod audio con todo ok
             System.out.println("\npa1 se introducen todo bien");
             ProdAudio pa1 = new ProdAudio(1, "20-1-2018", "20-2-2018");
@@ -71,10 +74,10 @@ public class PlatoTv {
 
         System.out.println("");
         System.out.println("PRUEBAS TRABAJADOR");
-        System.out.println("");
+        
 
         try {
-            System.out.println("t1 con todos los datos bien");
+            System.out.println("\nt1 con todos los datos bien");
             Trabajador t1 = new Trabajador("72141582N", "IVAN", "CASADO", 'V', true, "20/01/1986");
 
         } catch (Exception e) {
@@ -131,17 +134,41 @@ public class PlatoTv {
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-        
-         try {
-            System.out.println("\ntr4 con descripcion null");
+
+        try {
+            System.out.println("\ntr5 con descripcion null");
             Trabajo tr5 = new Trabajo(1, 002, 003, null);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-         
-         
 
-        // Trabajador t1 = new TrabajadorDiseñador(null, null, null, null, null, 'v', true, null);
+        System.out.println("");
+        System.out.println("DISEÑADORES");
+        System.out.println("");
+
+        try {
+            System.out.println("\ndiseña1 con todo bien");
+            TrabajadorDiseñador diseña1 = new TrabajadorDiseñador("Senior", "Java");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        try {
+            System.out.println("\ndiseña2 con categoeria mal");
+            TrabajadorDiseñador diseña2 = new TrabajadorDiseñador("", "Java");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            System.out.println("\ndiseña3 con software null");
+            TrabajadorDiseñador diseña3 = new TrabajadorDiseñador("Senio", null);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
     }
+    
+    
+    
 
 }
