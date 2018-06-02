@@ -16,11 +16,15 @@ public class ProdAudio extends Produccion {
 
     /**
      * Clase QUE hereda de Produccion
-     * @param numeroSerie
-     * @param fechaComienzo
-     * @param fechaFinalizacion
+     *
+     * @param numeroSerie es el numero de serie de la produccion espera un
+     * numero de serie con un int
+     * @param fechaComienzo es la fecha en la que el productor comienza a
+     * trabajar espera una fecha con el formato dd-MM-yyyy
+     * @param fechaFinalizacion es la fecha en la que ha finalizado el trabajo
+     * del productor espera una fecha con el formato dd-MM-yyyy
      */
-    public ProdAudio(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
+    public ProdAudio(int numeroSerie, String fechaComienzo, String fechaFinalizacion) throws Exception {
         super(numeroSerie, fechaComienzo, fechaFinalizacion);
     }
 

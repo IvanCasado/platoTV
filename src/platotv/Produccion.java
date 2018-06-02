@@ -15,64 +15,40 @@ import java.util.Scanner;
  * @author Iván
  */
 public class Produccion extends Trabajo {
-    
-    
-    ArrayList<Produccion> producciones ;
-    
-    
-    
-    
-    
-    
+
+    ArrayList<Produccion> producciones;
+
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     int numeroSerie;
     private Calendar fechaComienzo, fechaFinalizacion;
+
     /**
-     * 
-     * @param numeroSerie
-     * no puede ser menor que 0
-     * @param fechaComienzo
-     * El formato fecha a seguir es dd-MM-yyyy y no puede ser posterior a la fecha de finalizacion
-     * @param fechaFinalizacion
-     * El formato fecha a seguir es dd-MM-yyyy y no puede ser anterior a la fecha de finalizacion
-     * @throws Exception 
+     *
+     * @param numeroSerie es el numero de serie de la produccion espera un
+     * numero de serie con un int
+     * @param fechaComienzo es la fecha en la que el productor comienza a
+     * trabajar espera una fecha con el formato dd-MM-yyyy
+     * @param fechaFinalizacion es la fecha en la que ha finalizado el trabajo
+     * del productor espera una fecha con el formato dd-MM-yyyy
+     * @throws Exception
      */
-    public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion) throws Exception {
+    public Produccion(int numeroSerie, String fechaComienzo, String fechaFinalizacion) throws Exception {
         this.numeroSerie = numeroSerie;
-        this.fechaComienzo = fechaComienzo;
-        this.fechaFinalizacion = fechaFinalizacion;
-        
-        
-        
-        if (numeroSerie < 0){
+        //estos metodos hacen que no puedas dar una fecha incorrecta sin sentidoF
+        try {
+            this.fechaComienzo.setLenient(false);
+            this.fechaFinalizacion.setLenient(false);
+
+            this.fechaComienzo.setTime(sdf.parse(fechaComienzo));
+            this.fechaFinalizacion.setTime(sdf.parse(fechaFinalizacion));
+        } catch (Exception e) {
+            System.out.println("el formato de las fechas es dd-MM-yyyy");
+        }
+        if (numeroSerie < 0) {
             throw new Exception("no puede ser menor de 0");
-        }else {
+        } else {
             System.out.println("id correcto");
         }
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        if (sdf.format(fechaComienzo.getTime()).equals(fechaComienzo)) {
-            this.fechaComienzo=fechaComienzo;
-        }else{
-            throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
-        }
-        
-        if (sdf.format(fechaFinalizacion.getTime()).equals(fechaFinalizacion)) {
-            this.fechaFinalizacion=fechaFinalizacion;
-        }else{
-            throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
-        }
-        
-        if (fechaComienzo.compareTo(fechaFinalizacion)>0){
-            throw new Exception("La fecha de finalización no puede ser anterio a la de Comienzo");
-        }else{
-            System.out.println("Fechas correctas");
-        }
-        if (fechaFinalizacion.compareTo(fechaComienzo)<0){
-            throw new Exception("La fecha de comienzo no puede ser posterior a la de Finalización");
-        }else{
-            System.out.println("Fechas correctas");
-        }
-          
     }
 
     public Produccion(int numeroSerie, Calendar fechaComienzo, Calendar fechaFinalizacion, int idTrabajo, int supervisor1, int supervisor2, String descripcion) throws Exception {
@@ -144,15 +120,12 @@ public class Produccion extends Trabajo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    public void trabaja(){
-    
+
+    public void trabaja() {
+
     }
-    
-    
-    
-    
-      public void modificarProduccion() {
+
+    public void modificarProduccion() {
 
         //variables del metodo
         int numSerie;
@@ -183,7 +156,6 @@ public class Produccion extends Trabajo {
         }
 
     }
-    
 
     /**
      * Metodo tostring
@@ -192,7 +164,7 @@ public class Produccion extends Trabajo {
      */
     @Override
     public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
         return super.toString() + "\nnumero de serie=" + numeroSerie + "\nFecha comienzo=" + fechaComienzo + "\nfecha finalizacion=" + fechaFinalizacion;
     }
 }
