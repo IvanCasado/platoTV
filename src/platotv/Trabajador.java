@@ -19,11 +19,8 @@ public class Trabajador {
     private Calendar fechaIngreso;
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     
-    public  Trabajador (){
- 
+    public  Trabajador (){ 
 }
-    
-
    
   /**
    * 
@@ -62,6 +59,11 @@ public class Trabajador {
  
     }
 
+      /**
+       * METODOS GETTER Y SETTER
+       * @return 
+       */
+      
     public String getFechaIngreso() {  
         return sdf.format(fechaIngreso.getTime());
     }
