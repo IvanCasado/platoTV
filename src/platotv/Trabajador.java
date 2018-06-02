@@ -6,7 +6,6 @@
 package platotv;
 
 import java.util.Calendar;
-import java.util.Scanner;
 import java.text.SimpleDateFormat;
 
 /**
@@ -18,7 +17,7 @@ public class Trabajador {
     char genero;
     boolean senior;
     private Calendar fechaIngreso;
-          
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     
     public  Trabajador (){
  
@@ -28,22 +27,27 @@ public class Trabajador {
    
   /**
    * 
-   * @param NIF pide el nif del trabajador se espera un string con formato de nif
-   * @param nombre pide el nombre del trabajador espera un string
-   * @param apellidos pide el apellido del trabajador espera un string
-   * @param genero pregunta el genero del trabajador se espera 'v' o 'm'
-   * @param senior pide comprobar si es senior o no es senior
-   * @param fechaIngreso contiene la fecha de ingerso de un trabajse espera formato dd-MM-yyyy
+   * @param NIF pide el nif del trabajador se espera un string con formato de
+     * nif
+     * @param nombre pide el nombre del trabajador espera un string
+     * @param apellidos pide el apellido del trabajador espera un string
+     * @param genero pregunta el genero del trabajador se espera 'v' o 'm'
+     * @param senior pide comprobar si es senior o no es senior
+     * @param fechaIngreso contiene la fecha de ingerso de un trabajse espera
+     * formato dd-MM-yyyy
    * @throws Exception 
    */
-      public Trabajador(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
+      public Trabajador(String NIF, String nombre, String apellidos, char genero, boolean senior, String fechaIngreso) throws Exception {
         this.NIF = NIF;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        
-       
-      
-          if (genero=='V'||genero=='v'||genero=='M'||genero=='m') {
+        try{
+        this.fechaIngreso.setLenient(false);
+       this.fechaIngreso.setTime(sdf.parse(fechaIngreso));
+          } catch (Exception e) {
+              System.out.println("el formato de la fecha es dd-MM-yyyy");
+          }
+          if ((genero=='V')||(genero=='v')||(genero=='M')||(genero=='m')) {
               this.genero = genero;
           }else{
             throw  new Exception("el sexo debe ser v o m");
@@ -53,17 +57,12 @@ public class Trabajador {
           }else{
             throw  new Exception("Senior ha de ser true o false");
           }
-          SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-          if (sdf.format(fechaIngreso.getTime()).equals(fechaIngreso)) {
-              this.fechaIngreso=fechaIngreso;
-          }else{
-              throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
-          }
+           SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+          
  
     }
 
-    public String getFechaIngreso() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    public String getFechaIngreso() {  
         return sdf.format(fechaIngreso.getTime());
     }
 
@@ -116,8 +115,7 @@ public class Trabajador {
      */
     
     @Override
-    public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    public String toString() { 
         return "NIF del trabajador=" + NIF + "\nnombre=" + nombre + "\napellidos=" + apellidos + "\ngenero=" + genero + "\ncondicion=" + senior + "FechaIngreso=" + sdf.format(fechaIngreso.getTime());
     }
 }

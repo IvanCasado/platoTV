@@ -5,7 +5,6 @@
  */
 package platotv;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -17,20 +16,26 @@ public class TrabajadorSonido extends Trabajador {
     /**
      * Clase hereda de Trabajador
      */
-    
-    
-    
-    
     /**
-     * Constructo sin parametros
+     * Constructor sin parametros
      */
-     
-    
     public TrabajadorSonido() {
     }
 //constructor con parametros
 
-    public TrabajadorSonido(String NIF, String nombre, String apellidos, char genero, boolean senior, Calendar fechaIngreso) throws Exception {
+    /**
+     *
+     * @param NIF pide el nif del trabajador se espera un string con formato de
+     * nif
+     * @param nombre pide el nombre del trabajador espera un string
+     * @param apellidos pide el apellido del trabajador espera un string
+     * @param genero pregunta el genero del trabajador se espera 'v' o 'm'
+     * @param senior pide comprobar si es senior o no es senior
+     * @param fechaIngreso contiene la fecha de ingerso de un trabajse espera
+     * formato dd-MM-yyyy
+     * @throws Exception
+     */
+    public TrabajadorSonido(String NIF, String nombre, String apellidos, char genero, boolean senior, String fechaIngreso) throws Exception {
         super(NIF, nombre, apellidos, genero, senior, fechaIngreso);
     }
 
