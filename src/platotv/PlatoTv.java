@@ -65,7 +65,7 @@ public class PlatoTv {
             System.out.println(e.toString());
         }
         try {
-            System.out.println("\npa3 se introducen  con fecha final menos de fechacomienzo");
+            System.out.println("\npa3 se introducen  con fecha final menor de fechacomienzo");
             //prod audio con fecha final menos de fechacomienzo
             ProdAudio pa3 = new ProdAudio(-11, "20-3-2018", "20-2-2018");
         } catch (Exception e) {
