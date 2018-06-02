@@ -56,8 +56,8 @@ public class Trabajador {
             throw new Exception("Senior ha de ser true o false");
         }
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        
-      //  llamada a validacion
+
+        //  llamada a validacion
         validarDNI(NIF);
     }
 
@@ -126,7 +126,7 @@ public class Trabajador {
 
     /**
      * Metodo comprobar dni que recibe un string y comprueba que la longitud sea
-     * 9
+     * 9 y la ultioma sea letra ademas comprueba que no haya letras enmedio
      *
      * @param dni
      * @return
@@ -135,20 +135,73 @@ public class Trabajador {
 
         boolean letras = false;
 
-        //comprueba que no haya letras excepto la ultima
-        for (int i = 0; i < dni.length() - 1; i++) {
+        //comprueba que no haya letras excepto la ultima por eso le resto 2
+        for (int i = 0; i <= dni.length() - 2; i++) {
 
             if (Character.isLetter(dni.charAt(i))) {
                 letras = true;
             }
         }
 
-        if ((dni.length() != 9 && letras == true) || (Character.isLetter(dni.charAt(8)) == false) && letras == true) {
-            System.out.println("debe tener 8 numeros y una letra al final");
+        if ((dni.length() != 9) || (Character.isLetter(dni.charAt(8)) == false) || letras == true) {
+
             throw new Exception("DNI no valido");
         } else {
             System.out.println("DNI valido");
         }
     }
 
+    /**
+     * metodo que comprobara nombre no admite numeros se espera un string
+     *
+     * @param nom
+     */
+    void validarNombre(String nom) throws Exception {
+
+        boolean letras = false;
+
+        //comprueba que no haya numeros
+        for (int i = 0; i <= nom.length() - 1; i++) {
+
+            if (Character.isDigit(nom.charAt(i))) {
+                letras = true;
+            }
+        }
+
+        if (letras == true) {
+
+            throw new Exception("no se admiten numeros");
+
+        } else {
+            System.out.println("(Nombre correcto)");
+        }
+
+    }
+
+    /**
+     * metodo que comprobara apellidos no admite numeros se espera un string
+     *
+     * @param nom
+     */
+    void validarApellidos(String nom) throws Exception {
+
+        boolean letras = false;
+
+        //comprueba que no haya numeros
+        for (int i = 0; i <= nom.length() - 1; i++) {
+
+            if (Character.isDigit(nom.charAt(i))) {
+                letras = true;
+            }
+        }
+
+        if (letras == true) {
+
+            throw new Exception("no se admiten numeros");
+
+        } else {
+            System.out.println("apellido correcto");
+        }
+
+    }
 }
