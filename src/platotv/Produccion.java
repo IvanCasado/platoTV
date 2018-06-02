@@ -62,12 +62,16 @@ public class Produccion extends Trabajo {
             throw  new Exception("El formato fecha a seguir es dd-MM-yyyy");
         }
         
-        if (fechaComienzo > fechaFinalizacion){
-            throw new Exception("La fecha de comienzo no puede ser posterior a la de Finalizacion");
+        if (fechaComienzo.compareTo(fechaFinalizacion)>0){
+            throw new Exception("La fecha de finalización no puede ser anterio a la de Comienzo");
         }else{
             System.out.println("Fechas correctas");
         }
-        
+        if (fechaFinalizacion.compareTo(fechaComienzo)<0){
+            throw new Exception("La fecha de comienzo no puede ser posterior a la de Finalización");
+        }else{
+            System.out.println("Fechas correctas");
+        }
           
     }
 
